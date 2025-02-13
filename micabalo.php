@@ -4,20 +4,21 @@
 <style type="text/css">
 body,td,th {
 	font-family: Arial, Helvetica, sans-serif;
-	color:rgb(35, 196, 218);
+	color:rgb(13, 114, 114);
 	font-size: 12px;
 }
 .style1 {color:rgb(248, 6, 6)}
 .style2 {
-	color:rgb(183, 214, 45);
+	color:rgba(74, 163, 214, 0.82);
 	font-weight: bold;
 }
-.style3 {color: #006600}
-.style7 {color:rgb(3, 3, 255); font-style: italic; }
+.style3 {color:rgb(231, 99, 18)}
+.style7 {color:rgb(3, 150, 255); font-style: italic; }
 body {
-	background-color:rgb(25, 22, 216);
+	background-color:rgb(22, 216, 125);
 }
-.style8 {color:rgb(224, 15, 15)}
+.style8 {color:rgb(132, 28, 12)}
+
 
 </style></head>
 
