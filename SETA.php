@@ -1,3 +1,10 @@
+<title>Conditional Control Statements</title>
+<style type="text/css">
+body {
+	background-color:rgb(216, 22, 22);
+}
+</style></head>
+
 <?php
 function calculateCalories($weight, $lifestyle) {
     if ($lifestyle === 'A') {
