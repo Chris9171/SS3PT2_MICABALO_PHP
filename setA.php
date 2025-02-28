@@ -3,7 +3,7 @@
 body {
 	background-color:rgb(22, 234, 230);
 }
-</style></head>
+</style>
 <?php
 function calculateCalories($weight, $lifestyle) {
     if ($lifestyle === 'A') {
