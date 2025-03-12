@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
        body {
         font-family: Arial, sans-serif;
             text-align: center;
-            background: linear-gradient(135deg,rgb(156, 34, 38),rgb(219, 90, 55),rgb(196, 118, 54),rgb(168, 31, 47));
+            background: linear-gradient(135deg,rgb(42, 238, 16),rgb(8, 216, 144),rgb(58, 38, 187),rgb(213, 20, 175));
             background-size: 400% 400%;
             animation: gradientBG 10s ease infinite;
             overflow: hidden;
