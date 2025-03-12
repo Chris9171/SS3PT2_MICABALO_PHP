@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Looping Structures: While and Do-While Loop</title>
     <style type="text/css">
-        body {
-            background-color: rgb(203, 88, 88);
-            color: white; 
+       body {
+        font-family: Arial, sans-serif;
             text-align: center;
-            padding: 20px;
+            background: linear-gradient(135deg,rgb(156, 34, 38),rgb(219, 90, 55),rgb(196, 118, 54),rgb(168, 31, 47));
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            overflow: hidden;
+       }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         input {
             padding: 20px;
@@ -17,19 +24,18 @@
         }
         button {
             padding: 10px 20px;
-            background-color: rgb(90, 226, 231);
+            background-color: rgb(26, 252, 233);
             color: navy; 
-            border: 16px solid skyblue;
-            cursor: pointer;
+            
         }
         button:hover {
-            background-color: rgb(229, 117, 83);
+            background-color: rgb(13, 232, 248);
         }
     </style>
 </head>
 <body>
 
-    <h3>Calculate Sum of Squares and Cubes</h3>
+    <h1>Calculate Sum of Squares and Cubes</h1>
 
     <form method="POST">
         <label for="limit">Enter the Upper Limit:</label>
@@ -38,24 +44,24 @@
     </form>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-        
-        $n = $_POST["limit"];
-    if ($n > 0) 
-        $squares = 0;
-        $cubes = 0;
+        if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+            
+            $n = $_POST["limit"];
+        if ($n > 0) 
+            $squares = 0;
+            $cubes = 0;
 
-        
-        $i = 1;
-        for ($i = 1; $i <= $n;  $i++) {
-            $squares += $i * $i;
-            $cubes +=  $i * $i * $i;
+            
+            $i = 1;
+            for ($i = 1; $i <= $n;  $i++) {
+                $squares += $i * $i;
+                $cubes +=  $i * $i * $i;
+            }
+            echo "<divc class='result'>";
+            echo "<h2>The sum of Squares from 1 to $n is $squares.</h2>";
+            echo "<h2>The sum of Cubes from 1 to $n is $cubes.</h2>";
         }
-        echo "<divc class='result'>";
-        echo "<h2>The sum of Squares from 1 to $n is $squares.</h2>";
-        echo "<h2>The sum of Cubes from 1 to $n is $cubes.</h2>";
-    }
-    ?>
+        ?>
 
 </body>
 </html>
