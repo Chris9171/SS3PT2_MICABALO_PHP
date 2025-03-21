@@ -1,7 +1,8 @@
-<!<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Looping Structures: While and Do-While Loop</title>
     <style type="text/css">
@@ -31,46 +32,58 @@
         button:hover {
             background-color: rgb(13, 232, 248);
         }
-    </style>
-</head>
-<body>
-	<form action="" method="POST">
-		<label>1st Quarter Grade</label> <input type="text" name="1st Quarter Grade" placeholder="1st Quarter Grade"><br>
-		<label>2nd Quarter Grade </label> <input type="text" name="2nd Quarter Grade" placeholder="2nd Quarter Grade"><br>
-		<label>3rd Quarter Grade</label> <input type="text" name="3rd Quarter Grade" placeholder="3rd Quarter Grade"><br>
-		<label>4th Quarter Grade</label> <input type="text" name="4th Quarter Gradee" placeholder="4th Quarter Grade"><br>
+        </style>
+    </head>
 
-		<input type="submit" name="add">
+    <body>
+        <h1>GRADE CALCULATOR</h1>
+    <form action="" method="POST">
+        <label>1st Quarter Grade</label> <input type="number" name="firstquarter"><br>
+        <label>2st Quarter Grade</label> <input type="number" name="secondquarter"><br>
+        <label>3st Quarter Grade</label> <input type="number" name="thirdquarter"><br>
+        <label>4st Quarter Grade</label> <input type="number" name="fourthquarter"><br>
+        <input type="submit" name="submit">
+    </form>
 
-	</form>
+<?php
+if (isset($_POST['submit'])) {
 
-	<?php
+    $first_quarter = $_POST['firstquarter'];
+    $second_quarter = $_POST['secondquarter'];
+    $third_quarter = $_POST['thirdquarter'];
+    $fourth_quarter = $_POST['fourthquarter'];
 
-        $averageGrade = ($firstQuarter + $secondQuarter + $thirdQuarter + $fourQuarter)
+    $averageGrade = ($first_quarter + $second_quarter + $third_quarter + $fourth_quarter) / 4;
 
-        if ($averageGrade >= 98 && $averageGrade <=96) {
-           echo "Your average grade is: " . $averageGrade;
-           echo "<br><br>OUTSTANDING!!!";
-       
-        }elseif ($averageGrade >= 90 && $averageGrade <=94){
-           echo "Your average grade is: " . $averageGrade;
-           echo "<br><br>EXCELLENT!!!";
-       
-       }elseif ($averageGrade >= 80 && $averageGrade <=84){
-           echo "Your average grade is: " . $averageGrade;
-           echo "<br><br>GOOD!!!";
-       
-       }elseif ($averageGrade >= 75 && $averageGrade <=79){
-           echo "Your average grade is: " . $averageGrade;
-           echo "<br><br>NOT BAD!!!";
-       
-       }elseif {
-           echo "Your average grade is: " . $averageGrade;
-           echo "<br><br>FAILED!!!";
-       
-       }
+if ($averageGrade >= 90 && $averageGrade <=100) {
+   echo "Average Grade: " . $averageGrade;
+   echo "<br><br>OUTSTANDING!!!";
+   echo "<br><br>Passed";
+
+}elseif ($averageGrade >= 85 && $averageGrade <=89){
+   echo "Average Grade: " . $averageGrade;
+   echo "<br><br>VERY SATISFACTORY!!!";
+   echo "<br><br>Passed";
+
+}elseif ($averageGrade >= 80 && $averageGrade <=84){
+   echo "Average Grade: " . $averageGrade;
+   echo "<br><br>SATISFACTORY!!!";
+   echo "<br><br>Passed";
+
+}elseif ($averageGrade >= 75 && $averageGrade <=79){
+   echo "Average Grade: " . $averageGrade;
+   echo "<br><br>FAIRLY SATISFACTORY!!!";
+   echo "<br><br>Passed";
+
+}elseif ( $averageGrade <=74) {
+   echo "Average Grade: " . $averageGrade;
+   echo "<br><br>DID NOT MEET EXPECTATIONS!!!";
+   echo "<br><br>Failed";
 }
-	
+}
+   ?>
+    </body>
+</html>
 ?>
 </body>
 </html>
