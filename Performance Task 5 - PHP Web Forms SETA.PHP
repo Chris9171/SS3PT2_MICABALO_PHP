@@ -9,9 +9,9 @@
        body {
         font-family: Arial, sans-serif;
             text-align: center;
-            background: linear-gradient(135deg,rgb(42, 238, 16),rgb(8, 216, 144),rgb(58, 38, 187),rgb(213, 20, 175));
+            background: linear-gradient(135deg,rgb(255, 25, 179),rgb(1, 186, 248),rgb(187, 11, 214),rgb(118, 192, 111));
             background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            animation: gradientBG 5s ease infinite;
             overflow: hidden;
        }
         @keyframes gradientBG {
@@ -38,20 +38,20 @@
     <body>
         <h1>GRADE CALCULATOR</h1>
     <form action="" method="POST">
-        <label>1st Quarter Grade</label> <input type="number" name="firstquarter"><br>
-        <label>2st Quarter Grade</label> <input type="number" name="secondquarter"><br>
-        <label>3st Quarter Grade</label> <input type="number" name="thirdquarter"><br>
-        <label>4st Quarter Grade</label> <input type="number" name="fourthquarter"><br>
+        <label>1st Quarter Grade</label> <input type="number" name="1stquarter"><br>
+        <label>2st Quarter Grade</label> <input type="number" name="1stquarter"><br>
+        <label>3st Quarter Grade</label> <input type="number" name="3rdquarter"><br>
+        <label>4st Quarter Grade</label> <input type="number" name="4thquarter"><br>
         <input type="submit" name="submit">
     </form>
 
 <?php
 if (isset($_POST['submit'])) {
 
-    $first_quarter = $_POST['firstquarter'];
-    $second_quarter = $_POST['secondquarter'];
-    $third_quarter = $_POST['thirdquarter'];
-    $fourth_quarter = $_POST['fourthquarter'];
+    $first_quarter = $_POST['1stquarter'];
+    $second_quarter = $_POST['1stquarter'];
+    $third_quarter = $_POST['3rdquarter'];
+    $fourth_quarter = $_POST['4thquarter'];
 
     $averageGrade = ($first_quarter + $second_quarter + $third_quarter + $fourth_quarter) / 4;
 
@@ -83,7 +83,4 @@ if ($averageGrade >= 90 && $averageGrade <=100) {
 }
    ?>
     </body>
-</html>
-?>
-</body>
 </html>
