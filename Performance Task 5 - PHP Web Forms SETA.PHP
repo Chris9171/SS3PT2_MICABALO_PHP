@@ -38,18 +38,18 @@
     <body>
         <h1>GRADE CALCULATOR</h1>
     <form action="" method="POST">
-        <label>1st Quarter Grade</label> <input type="number" name="1stquarter"><br>
-        <label>2st Quarter Grade</label> <input type="number" name="1stquarter"><br>
-        <label>3st Quarter Grade</label> <input type="number" name="3rdquarter"><br>
-        <label>4st Quarter Grade</label> <input type="number" name="4thquarter"><br>
-        <input type="submit" name="submit">
+       <h1><label>1st Quarter Grade</label> <input type="number" name="1stquarter"><br></h1>
+       <h1><label>2st Quarter Grade</label> <input type="number" name="2stquarter"><br></h1>
+       <h1><label>3st Quarter Grade</label> <input type="number" name="3rdquarter"><br></h1>
+       <h1><label>4st Quarter Grade</label> <input type="number" name="4thquarter"><br></h1>
+       <h1><input type="submit" name="submit">
     </form>
 
 <?php
 if (isset($_POST['submit'])) {
 
     $first_quarter = $_POST['1stquarter'];
-    $second_quarter = $_POST['1stquarter'];
+    $second_quarter = $_POST['2stquarter'];
     $third_quarter = $_POST['3rdquarter'];
     $fourth_quarter = $_POST['4thquarter'];
 
