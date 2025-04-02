@@ -7,7 +7,7 @@
     <style type="text/css">
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, rgb(255, 25, 179), rgb(1, 186, 248), rgb(187, 11, 214), rgb(118, 192, 111));
+            background: linear-gradient(135deg, rgb(27, 238, 234), rgb(1, 186, 248), rgb(4, 93, 144), rgb(11, 186, 221));
             background-size: 400% 400%;
             animation: gradientBG 5s ease infinite;
             overflow: hidden;
@@ -24,13 +24,14 @@
             margin: 20px auto;
             font-size: 18px;
             text-align: center;
+            background-color: rgb(25, 182, 190);
         }
         th, td {
             border: 1px solid black;
             padding: 10px;
         }
         th {
-            background-color: rgb(21, 129, 231);
+            background-color: rgb(228, 228, 228);
         }
         form {
             display: inline-block;
@@ -47,7 +48,7 @@
         }
         button, input[type="submit"] {
             padding: 10px 20px;
-            background-color: rgb(26, 252, 233);
+            background-color: rgb(238, 247, 246);
             color: navy; 
             border: none;
             cursor: pointer;
@@ -56,14 +57,22 @@
         button:hover, input[type="submit"]:hover {
             background-color: rgb(13, 232, 248);
         }
+        .order-summary-container {
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 3px solid navy;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
         .order-summary {
-            font-size: 30px;
+            font-size: 24px;
             color: rgba(0, 0, 0, 0.88);
             font-weight: bold;
-            margin-top: 20px;
-        }
-        .order-summary p {
-            margin: 50px 0;
+            text-align: center;
+            background-color: lightgray;
+            padding: 20px;
+            border-radius: 10px;
         }
         label {
             font-size: 26px;
@@ -80,29 +89,33 @@
     <h1>Item Order</h1>
     <table>
         <tr>
+            <th>Menu</th>
             <th>Order</th>
             <th>Unit Price</th>
         </tr>
-        <tr>
-            <td>Matcha Hot Chocolate</td>
-            <td>$100.00</td>
-        </tr>
-        <tr>
-            <td>Strawberry Matcha</td>
-            <td>$150.00</td>
-        </tr>
-        <tr>
-            <td>Matcha Lattes</td>
-            <td>$200.00</td>
-        </tr>
-        <tr>
-            <td>Black Forest</td>
-            <td>$157.00</td>
-        </tr>
-        <tr>
-            <td>Ice Caramel Macchiato</td>
-            <td>$110.00</td>
-        </tr>
+        <td><img src="https://www.siftandsimmer.com/wp-content/uploads/2021/01/matcha-peppermint-white-hot-chocolate3-683x1024.jpg" width="100" /></td>
+        <td>Matcha Hot Chocolate</td>
+        <td>$100.00</td>
+    </tr>
+    <tr>
+        <td><img src="https://www.siftandsimmer.com/wp-content/uploads/2024/06/IMG_3139-featured.jpg" width="100"/></td>
+        <td>Strawberry Matcha</td>
+        <td>$150.00</td>
+    </tr>
+    <tr>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWIY3yGj3ZGFvnJ6tjE9rq3N6OGSr2Nat8OQ&s" width="100" /></td>
+        <td>Matcha Lattes</td>
+        <td>$200.00</td>
+    </tr>
+    <tr>
+        <td><img src="https://xofacafebistro.com/en/wp-content/uploads/2023/06/black-forest-milk-drink-e1685636158900.jpeg" width="100" /></td>
+        <td>Black Forest Latte</td>
+        <td>$157.00</td>
+    </tr>
+    <tr>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUFOdcGRr8iaxen0SpLWHkMdgxZNlXX2ET4zr7mM_GCm4d_LO0wwBiqbNo-quk-sXiNIw&usqp=CAU" width="100" /></td>
+        <td>Ice Caramel Macchiato</td>
+        <td>$110.00</td>
     </table>
 
     <form method="post">
@@ -122,80 +135,43 @@
 
         <label for="takeout">Takeout:</label>
         <input type="checkbox" name="takeout" id="takeout">
-        <br><br>
-
         <label for="dine_in">Dine in:</label>
         <input type="checkbox" name="dine_in" id="dine_in">
-        <br><br>
-
+        <br>
         <input type="submit" value="Calculate Total" style="font-size: 20px; padding: 10px 20px;">
     </form>
 
     <?php 
-    function get_price($item) {
-        $prices = [
-            "Matcha hot chocolate" => 100.00,
-            "Strawberry matcha" => 150.00,
-            "Matcha lattes" => 200.00,
-            "Black Forest" => 157.00,
-            "Ice Caramel Macchiato" => 110.00,
-        ];
-        return isset($prices[$item]) ? $prices[$item] : 0;
-    }
-
-    function calculate_tax($amount, $is_takeout) {
-        $tax_rate = $is_takeout ? 0.12 : 0;
-        return $amount * $tax_rate;
-    }
-
-    function calculate_total($order, $quantity, $is_takeout) {
-        $price = get_price($order);
-        $subtotal = $price * $quantity;
-        $tax = calculate_tax($subtotal, $is_takeout);
-        return $subtotal + $tax;
-    }
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $menu_items = [
-            "Matcha hot chocolate",
-            "Strawberry matcha",
-            "Matcha lattes",
-            "Black Forest",
-            "Ice Caramel Macchiato"
-        ];
-
-        if (!isset($_POST["order"]) || !is_numeric($_POST["order"])) {
-            echo "Invalid input!";
-            exit;
-        }
+        $menu_items = ["Matcha hot chocolate", "Strawberry matcha", "Matcha lattes", "Black Forest", "Ice Caramel Macchiato"];
+        $prices = [100.00, 150.00, 200.00, 157.00, 110.00];
 
         $choice = intval($_POST["order"]);
-        if ($choice < 1 || $choice > 5) {
-            echo "Invalid choice!";
+        $quantity = intval($_POST["quantity"]);
+        $is_takeout = isset($_POST["takeout"]);
+        
+        if ($choice < 1 || $choice > 5 || $quantity <= 0) {
+            echo "<p>Invalid input!</p>";
             exit;
         }
 
         $order = $menu_items[$choice - 1];
-        $quantity = isset($_POST["quantity"]) ? intval($_POST["quantity"]) : 0;
-        $is_takeout = isset($_POST["takeout"]);
-
-        if ($quantity <= 0) {
-            echo "Invalid quantity!";
-            exit;
-        }
-
-        $total_amount = calculate_total($order, $quantity, $is_takeout);
+        $price = $prices[$choice - 1];
+        $subtotal = $price * $quantity;
+        $tax = $is_takeout ? $subtotal * 0.12 : 0;
+        $total_amount = $subtotal + $tax;
         $order_type = $is_takeout ? "Take-out" : "Dine-in";
 
+        echo "<div class='order-summary-container'>";
         echo "<div class='order-summary'>";
         echo "<p><strong>Order Summary:</strong></p>";
         echo "<p>Item: $order</p>";
         echo "<p>Quantity: $quantity</p>";
         echo "<p>Order Type: $order_type</p>";
-        echo "<p>Total amount to pay: $" . number_format($total_amount, 2) . "</p>";
+        echo "<p>Total Amount: $" . number_format($total_amount, 2) . "</p>";
+        echo "</div>";
         echo "</div>";
     }
     ?>
-
 </body>
 </html>
