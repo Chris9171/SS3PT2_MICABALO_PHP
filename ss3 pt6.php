@@ -95,37 +95,37 @@
         </tr>
         <td><img src="https://www.siftandsimmer.com/wp-content/uploads/2021/01/matcha-peppermint-white-hot-chocolate3-683x1024.jpg" width="100" /></td>
         <td>Matcha Hot Chocolate</td>
-        <td>$100.00</td>
+        <td> ₱100.00</td>
     </tr>
     <tr>
         <td><img src="https://www.siftandsimmer.com/wp-content/uploads/2024/06/IMG_3139-featured.jpg" width="100"/></td>
         <td>Strawberry Matcha</td>
-        <td>$150.00</td>
+        <td> ₱150.00</td>
     </tr>
     <tr>
         <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWIY3yGj3ZGFvnJ6tjE9rq3N6OGSr2Nat8OQ&s" width="100" /></td>
         <td>Matcha Lattes</td>
-        <td>$200.00</td>
+        <td> ₱200.00</td>
     </tr>
     <tr>
         <td><img src="https://xofacafebistro.com/en/wp-content/uploads/2023/06/black-forest-milk-drink-e1685636158900.jpeg" width="100" /></td>
         <td>Black Forest Latte</td>
-        <td>$157.00</td>
+        <td> ₱157.00</td>
     </tr>
     <tr>
         <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUFOdcGRr8iaxen0SpLWHkMdgxZNlXX2ET4zr7mM_GCm4d_LO0wwBiqbNo-quk-sXiNIw&usqp=CAU" width="100" /></td>
         <td>Ice Caramel Macchiato</td>
-        <td>$110.00</td>
+        <td> ₱110.00</td>
     </table>
 
     <form method="post">
         <h1>Select your order:</h1>
         <select name="order" id="order" style="border: 2px solid blue; padding: 15px; font-size: 22px;">
-            <option value="1">Matcha hot chocolate - $100.00</option>
-            <option value="2">Strawberry matcha - $150.00</option>
-            <option value="3">Matcha lattes - $200.00</option>
-            <option value="4">Black Forest - $157.00</option>
-            <option value="5">Ice Caramel Macchiato - $110.00</option>
+            <option value="1">Matcha hot chocolate - ₱100.00</option>
+            <option value="2">Strawberry matcha - ₱150.00</option>
+            <option value="3">Matcha lattes -  ₱200.00</option>
+            <option value="4">Black Forest -  ₱157.00</option>
+            <option value="5">Ice Caramel Macchiato -  ₱110.00</option>
         </select>
         <br><br>
         
@@ -168,7 +168,7 @@
         echo "<p>Item: $order</p>";
         echo "<p>Quantity: $quantity</p>";
         echo "<p>Order Type: $order_type</p>";
-        echo "<p>Total Amount: $" . number_format($total_amount, 2) . "</p>";
+        echo "<p>Total Amount:  ₱" . number_format($total_amount, 2) . "</p>";
         echo "</div>";
         echo "</div>";
     }
