@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
         body {
-            font-family: Arial, sans-serif;
+           font-family: Arial, sans-serif;
             background: linear-gradient(135deg, rgb(27, 238, 234), rgb(1, 186, 248), rgb(4, 93, 144), rgb(11, 186, 221));
             background-size: 400% 400%;
             animation: gradientBG 5s ease infinite;
-            overflow: hidden;
+            overflow: auto;
+            min-height: 100vh; 
             text-align: center;
         }
         @keyframes gradientBG {
